@@ -2,7 +2,8 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/tbd/blob/master/LICENSE.txt)
 
 This LaTeX package helps you highlight pieces of your code that needs
-further work. The package uses [`xcolor`](https://ctan.org/pkg/minted) 
+further work (TBD stands for "to be determined"). 
+The package uses [`xcolor`](https://ctan.org/pkg/minted) 
 and [`soul`](https://ctan.org/pkg/soul) packages.
 
 First, [install it](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages)
