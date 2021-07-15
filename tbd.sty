@@ -26,17 +26,21 @@
 \RequirePackage{xkeyval}
 \newif\iftbdhide
 \DeclareOptionX{hide}{\tbdhidetrue}
+\newif\iftbdoff
+\DeclareOptionX{off}{\tbdofftrue}
 \ProcessOptionsX\relax
 
 \RequirePackage{xcolor}
 \RequirePackage{soul}
 
 \newcommand\tbd[1]{{%
-  \sethlcolor{yellow}%
-  \iftbdhide%
-    \hl{TBD}
-  \else%
-    \hl{#1}
+  \iftbdoff\else%
+    \sethlcolor{yellow}%
+    \iftbdhide%
+      \hl{TBD}
+    \else%
+      \hl{#1}
+    \fi%
   \fi%
 }}
 
