@@ -24,38 +24,38 @@
 
 .ONESHELL:
 
-all: tbd.pdf zip
+all: to-be-determined.pdf zip
 
-tbd.pdf: tbd.tex tbd.sty
+to-be-determined.pdf: to-be-determined.tex to-be-determined.sty
 	latexmk -pdf $<
 	texsc $<
 	texqc --ignore 'You have requested document class' $<
 
-zip: tbd.pdf tbd.sty
+zip: to-be-determined.pdf to-be-determined.sty
 	rm -rf package
 	mkdir package
 	cd package
-	mkdir tbd
-	cd tbd
+	mkdir to-be-determined
+	cd to-be-determined
 	cp ../../README.md .
 	version=$$(cat ../../VERSION.txt)
 	echo "Version is: $${version}"
 	date=$$(date +%Y/%m/%d)
 	echo "Date is: $${date}"
-	cp ../../tbd.sty .
-	gsed -i "s|0\.0\.0|$${version}|" tbd.sty
-	gsed -i "s|00\.00\.0000|$${date}|" tbd.sty
-	cp ../../tbd.tex .
-	gsed -i "s|0\.0\.0|$${version}|" tbd.tex
-	gsed -i "s|00\.00\.0000|$${date}|" tbd.tex
+	cp ../../to-be-determined.sty .
+	gsed -i "s|0\.0\.0|$${version}|" to-be-determined.sty
+	gsed -i "s|00\.00\.0000|$${date}|" to-be-determined.sty
+	cp ../../to-be-determined.tex .
+	gsed -i "s|0\.0\.0|$${version}|" to-be-determined.tex
+	gsed -i "s|00\.00\.0000|$${date}|" to-be-determined.tex
 	cp ../../.latexmkrc .
-	latexmk -pdf tbd.tex
+	latexmk -pdf to-be-determined.tex
 	rm .latexmkrc
 	rm -rf _minted-* *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out *.exc
-	cat tbd.sty | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" > DEPENDS.txt
+	cat to-be-determined.sty | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" > DEPENDS.txt
 	cd ..
-	zip -r tbd.zip *
-	cp tbd.zip ..
+	zip -r to-be-determined.zip *
+	cp to-be-determined.zip ..
 	cd ..
 
 clean:
