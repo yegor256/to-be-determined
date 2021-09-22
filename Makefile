@@ -58,7 +58,7 @@ zip: to-be-determined.pdf to-be-determined.sty
 	cat to-be-determined.sty | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" > DEPENDS.txt
 	cd ..
 	zip -r to-be-determined.zip *
-	cp to-be-determined.zip ..
+	cp to-be-determined.zip ../to-be-determined-$${version}.zip
 	cd ..
 
 clean:
