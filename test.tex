@@ -20,51 +20,14 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\documentclass[12pt]{article}
-\usepackage[tt=false,type1=true]{libertine}
-\usepackage{multicol}
-\usepackage{to-be-determined}
-\usepackage{ffcode}
-\title{\ff{to-be-determined}: \LaTeX{} Package \\ for highlighting places that require more work}
-\author{Yegor Bugayenko}
-\date{0.0.0 00.00.0000}
-\begin{document}
-\pagenumbering{gobble}
-\raggedbottom
-\setlength{\parindent}{0pt}
-\setlength{\columnsep}{32pt}
-\setlength{\parskip}{6pt}
-\maketitle
-
-This package helps you highlight places in your articles
-and make sure it looks nice. Install it from CTAN and then
-use like this:
-
-\begin{multicols}{2}
-\setlength{\parskip}{0pt}
-\scriptsize
-\raggedcolumns
-\begin{verbatim}
 \documentclass{article}
 \usepackage{to-be-determined}
 \begin{document}
-The budget is \tbd{99.00 USD}.
-\end{document}
-\end{verbatim}
 
-\columnbreak
+Highlight one \tbd{word}.
 
-The budget is \tbd{99.00 USD}.
+Highlight a \tbd{very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long text}.
 
-\end{multicols}
-
-If you want to hide the content of what's inside \ff{\char`\\tbd},
-use \ff{hide} option of the package. They will all be replaced with
-\tbd{TBD} placeholders.
-
-If you want them to disappear entirely, use the \ff{off} package option.
-
-More details about this package you find
-in the \ff{yegor256/to-be-determined} GitHub repository.
+Highlight a \tbd{few \par paragraphs \par of \par text}.
 
 \end{document}

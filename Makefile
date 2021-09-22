@@ -24,7 +24,10 @@
 
 .ONESHELL:
 
-all: to-be-determined.pdf zip
+all: to-be-determined.pdf test zip
+
+test:
+	pdflatex -pdf test.tex
 
 to-be-determined.pdf: to-be-determined.tex to-be-determined.sty
 	latexmk -pdf $<
