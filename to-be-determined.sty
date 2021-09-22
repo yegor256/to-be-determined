@@ -24,24 +24,26 @@
 \ProvidesPackage{to-be-determined}[00.00.0000 0.0.0 Highlighting places requiring future work]
 
 \RequirePackage{xkeyval}
-\newif\iftbdhide
-\DeclareOptionX{hide}{\tbdhidetrue}
-\newif\iftbdoff
-\DeclareOptionX{off}{\tbdofftrue}
+\makeatletter
+\newif\iftbd@hide
+\DeclareOptionX{hide}{\tbd@hidetrue}
+\newif\iftbd@off
+\DeclareOptionX{off}{\tbd@offtrue}
+\makeatother
 \ProcessOptionsX\relax
 
 \RequirePackage{xcolor}
 \RequirePackage{soul}
 
-\newcommand\tbd[1]{{%
-  \iftbdoff\else%
+\makeatletter\newcommand\tbd[1]{{%
+  \iftbd@off\else%
     \sethlcolor{yellow}%
-    \iftbdhide%
+    \iftbd@hide%
       \hl{TBD}%
     \else%
       \hl{#1}%
     \fi%
   \fi%
-}}
+}}\makeatother
 
 \endinput
