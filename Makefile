@@ -1,6 +1,6 @@
 # (The MIT License)
 #
-# Copyright (c) 2021 Yegor Bugayenko
+# Copyright (c) 2021-2022 Yegor Bugayenko
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the 'Software'), to deal
@@ -21,45 +21,50 @@
 # SOFTWARE.
 
 .SHELLFLAGS = -e -x -c
-
 .ONESHELL:
 
-all: to-be-determined.pdf test zip
+NAME=to-be-determined
 
-test:
-	pdflatex -pdf test.tex
+all: $(NAME).pdf test zip
 
-to-be-determined.pdf: to-be-determined.tex to-be-determined.sty
+copyright:
+	find . -name '*.tex' -o -name '*.sty' -o -name 'Makefile' | xargs -n1 grep -r "(c) 2021-$$(date +%Y) "
+
+test: tests/*.tex $(NAME).sty
+	cd tests && make && cd ..
+
+$(NAME).pdf: $(NAME).tex $(NAME).sty
 	latexmk -pdf $<
 	texsc $<
 	texqc --ignore 'You have requested document class' $<
 
-zip: to-be-determined.pdf to-be-determined.sty
+zip: $(NAME).pdf $(NAME).sty
 	rm -rf package
 	mkdir package
 	cd package
-	mkdir to-be-determined
-	cd to-be-determined
+	mkdir $(NAME)
+	cd $(NAME)
 	cp ../../README.md .
-	version=$$(cat ../../VERSION.txt)
+	version=$$(curl --silent -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/yegor256/$(NAME)/releases/latest | jq -r '.tag_name')
 	echo "Version is: $${version}"
 	date=$$(date +%Y/%m/%d)
 	echo "Date is: $${date}"
-	cp ../../to-be-determined.sty .
-	gsed -i "s|0\.0\.0|$${version}|" to-be-determined.sty
-	gsed -i "s|00\.00\.0000|$${date}|" to-be-determined.sty
-	cp ../../to-be-determined.tex .
-	gsed -i "s|0\.0\.0|$${version}|" to-be-determined.tex
-	gsed -i "s|00\.00\.0000|$${date}|" to-be-determined.tex
+	cp ../../$(NAME).sty .
+	gsed -i "s|0\.0\.0|$${version}|" $(NAME).sty
+	gsed -i "s|00\.00\.0000|$${date}|" $(NAME).sty
+	cp ../../$(NAME).tex .
+	gsed -i "s|0\.0\.0|$${version}|" $(NAME).tex
+	gsed -i "s|00\.00\.0000|$${date}|" $(NAME).tex
 	cp ../../.latexmkrc .
-	latexmk -pdf to-be-determined.tex
+	latexmk -pdf $(NAME).tex
 	rm .latexmkrc
 	rm -rf _minted-* *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.run.xml *.out *.exc
-	cat to-be-determined.sty | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" > DEPENDS.txt
+	cat $(NAME).sty | grep RequirePackage | gsed -e "s/.*{\(.\+\)}.*/hard \1/" > DEPENDS.txt
 	cd ..
-	zip -r to-be-determined.zip *
-	cp to-be-determined.zip ../to-be-determined-$${version}.zip
+	zip -r $(NAME).zip *
+	cp $(NAME).zip ../$(NAME)-$${version}.zip
 	cd ..
 
 clean:
 	git clean -dfX
+	cd tests && make clean && cd ..
