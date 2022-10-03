@@ -1,4 +1,5 @@
-[![make](https://github.com/yegor256/to-be-determined/actions/workflows/latexmk.yml/badge.svg)](https://github.com/yegor256/to-be-determined/actions/workflows/latexmk.yml)
+[![make](https://github.com/yegor256/to-be-determined/actions/workflows/l3build.yml/badge.svg)](https://github.com/yegor256/to-be-determined/actions/workflows/l3build.yml)
+[![CTAN](https://img.shields.io/ctan/v/to-be-determined)](https://ctan.org/pkg/to-be-determined)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/to-be-determined/blob/master/LICENSE.txt)
 
 This LaTeX package helps you highlight pieces of your code that needs
