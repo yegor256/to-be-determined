@@ -21,7 +21,7 @@ uploadconfig = {
   summary = "Highlight text passages that need further work",
   repository = "https://github.com/yegor256/to-be-determined",
   support = "",
-  topic = {"sys-supp", "exec-foreign"}
+  topic = {"editorial", "decoration", "cond-comp"}
 }
 
 function update_tag(file, content, tagname, tagdate)
