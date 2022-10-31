@@ -59,6 +59,7 @@
 \AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
 \usepackage{to-be-determined}
 \usepackage{href-ul}
+\usepackage[dtx]{docshots}
 \PageIndex
 \EnableCrossrefs
 \CodelineIndex
@@ -83,46 +84,30 @@
 % and make sure it looks nice. Install it from CTAN and then
 % use like this:
 
-% \begin{multicols}{2}
-% \setlength{\parskip}{0pt}
-% \raggedcolumns
-%\iffalse
-%<*verb>
-%\fi
-\begin{verbatim}
-\documentclass{article}
-\usepackage{to-be-determined}
-\begin{document}
-The budget is \tbd{99.00 USD}.
-\end{document}
-\end{verbatim}
-%\iffalse
-%</verb>
-%\fi
-%
-% \columnbreak
-%
+% \begin{docshot}
+% \documentclass{article}
+% \pagestyle{empty}
+% \usepackage{to-be-determined}
+% \begin{document}
 % The budget is \tbd{99.00 USD}.
-%
-% \end{multicols}
+% \end{document}
+% \end{docshot}
 
 % \section{Package Options}
 
-% \begin{macro}{hide}
+% \DescribeMacro{hide}
 % If you want to hide the content of what's inside |\tbd|,
 % use |hide| option of the package. They will all be replaced with
 % \tbd{TBD} placeholders.
-% \end{macro}
 
-% \begin{macro}{off}
+% \DescribeMacro{off}
 % If you want them to disappear entirely, use the |off| package option.
-% \end{macro}
 
 % \StopEventually{}
 
 % \section{Implementation}
-
 % \changes{v0.2.0}{2021/07/15}{Initial version}
+% \changes{v0.3.0}{2022/10/31}{We started using "docshots" package for rendering examples.}
 
 % First, we parse package options:
 %    \begin{macrocode}
