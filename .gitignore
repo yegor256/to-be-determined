@@ -27,3 +27,5 @@ package/
 _docshots/
 to-be-determined.glo
 to-be-determined.hd
+*.ret
+*.tmp
