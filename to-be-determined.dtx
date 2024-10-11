@@ -89,7 +89,8 @@
 % \pagestyle{empty}
 % \usepackage{to-be-determined}
 % \begin{document}
-% The budget is \tbd{99.00 USD}.
+% The budget is \tbd{99.00 USD}.\par
+% In math too: $a \tbd{?} b$.
 % \end{document}
 % \end{docshot}
 
@@ -121,9 +122,18 @@
 \ProcessOptionsX\relax
 %    \end{macrocode}
 
-% Then, we include a few packages:
+% Then, we include \href{https://ctan.org/pkg/xcolor}{xcolor} to use colors:
 %    \begin{macrocode}
 \RequirePackage{xcolor}
+%    \end{macrocode}
+
+% Then, we include \href{https://ctan.org/pkg/mathtools}{mathtools} to enable our commands in math mode:
+%    \begin{macrocode}
+\RequirePackage{mathtools}
+%    \end{macrocode}
+
+% Then, we include \href{https://ctan.org/pkg/soul}{soul} to use highlights:
+%    \begin{macrocode}
 \RequirePackage{soul}
 %    \end{macrocode}
 
@@ -134,9 +144,9 @@
   \iftbd@off\else%
     \sethlcolor{yellow}%
     \iftbd@hide%
-      \hl{TBD}%
+      \text{\hl{TBD}}%
     \else%
-      \hl{#1}%
+      \text{\hl{#1}}%
     \fi%
   \fi%
 }}\makeatother
