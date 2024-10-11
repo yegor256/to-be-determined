@@ -21,7 +21,7 @@
 # SOFTWARE.
 ---
 name: l3build
-on:
+'on':
   push:
     branches: master
   pull_request:
@@ -34,7 +34,9 @@ jobs:
         os: [ubuntu-20.04, macos-12]
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get install -y python3-pygments && sudo pip3 install pygments
+      - run: |
+          sudo apt-get install -y python3-pygments
+          sudo pip3 install pygments
         if: matrix.os == 'ubuntu-20.04'
       - run: pip3 install pygments
         if: matrix.os == 'macos-12'
