@@ -24,3 +24,6 @@ build/
 *.exc
 *.synctex.gz
 package/
+_docshots/
+to-be-determined.glo
+to-be-determined.hd
