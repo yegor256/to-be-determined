@@ -6,7 +6,8 @@
 
 This LaTeX package helps you highlight pieces of your code that needs
 further work (TBD stands for "to be determined").
-The package uses [`xcolor`](https://ctan.org/pkg/minted)
+The package uses [`xcolor`](https://ctan.org/pkg/xcolor),
+[`mathtools`](https://ctan.org/pkg/mathtools),
 and [`soul`](https://ctan.org/pkg/soul) packages.
 
 First,
