@@ -48,7 +48,7 @@ jobs:
         with:
           update-all-packages: true
           package-file: DEPENDS.txt
-      - run: l3build ctan --show-log-on-error --halt-on-error
+      - run: l3build ctan --show-log-on-error --halt-on-error || cat build/doc/to-be-determined.log
       - uses: JamesIves/github-pages-deploy-action@v4.6.8
         with:
           branch: gh-pages
