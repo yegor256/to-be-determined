@@ -35,9 +35,8 @@ merge:
 release:
   script: |-
     l3build tag ${tag}
-    l3build ctan --show-log-on-error || cat
-    exit 1
+    l3build ctan --show-log-on-error --halt-on-error
     texsc
     texqc
     git commit -am "version set to ${tag}"
-    echo 'y' | l3build upload --halt-on-error
+    echo 'y' | l3build upload --show-log-on-error --halt-on-error
