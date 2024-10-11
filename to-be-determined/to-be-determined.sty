@@ -50,15 +50,18 @@
 \ProcessOptionsX\relax
 
 \RequirePackage{xcolor}
+
+\RequirePackage{mathtools}
+
 \RequirePackage{soul}
 
 \makeatletter\newcommand\tbd[1]{{%
   \iftbd@off\else%
     \sethlcolor{yellow}%
     \iftbd@hide%
-      \hl{TBD}%
+      \text{\hl{TBD}}%
     \else%
-      \hl{#1}%
+      \text{\hl{#1}}%
     \fi%
   \fi%
 }}\makeatother
