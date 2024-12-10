@@ -20,9 +20,12 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
+\input{regression-test.tex}
 \documentclass{article}
 \usepackage{to-be-determined}
 \begin{document}
+
+\START
 
 Highlight one \tbd{word}.
 
@@ -30,4 +33,4 @@ Highlight a \tbd{very very very very very very very very very very very very ver
 
 Highlight a \tbd{few \par paragraphs \par of \par text}.
 
-\end{document}
+\END
