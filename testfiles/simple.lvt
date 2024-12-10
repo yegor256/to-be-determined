@@ -33,4 +33,11 @@ Highlight a \tbd{very very very very very very very very very very very very ver
 
 Highlight a \tbd{few \par paragraphs \par of \par text}.
 
+In math mode: $ hello, \tbd{world}! $.
+
+In equation:
+\begin{equation}
+e = mc^2 \tbd{maybe not?}
+\end{equation}
+
 \END
