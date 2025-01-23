@@ -50,4 +50,4 @@ jobs:
           branch: gh-pages
           folder: build/distrib/tds/tex/latex
           clean: true
-        if: github.ref == 'refs/heads/master' && matrix.os == 'ubuntu-20.04'
+        if: github.ref == 'refs/heads/master' && matrix.os == 'ubuntu-24.04'
