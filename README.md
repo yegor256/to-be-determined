@@ -4,7 +4,7 @@
 [![CTAN](https://img.shields.io/ctan/v/to-be-determined)](https://ctan.org/pkg/to-be-determined)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/to-be-determined/blob/master/LICENSE.txt)
 
-This LaTeX package helps you highlight pieces of your code that needs
+This LaTeX package helps you highlight pieces of your code that need
 further work (TBD stands for "to be determined").
 The package uses [`xcolor`](https://ctan.org/pkg/xcolor),
 [`mathtools`](https://ctan.org/pkg/mathtools),
