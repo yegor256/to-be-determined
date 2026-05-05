@@ -6,6 +6,7 @@ soft etoolbox
 soft href-ul
 soft hypdoc
 soft l3build
+soft lmodern
 soft mathtools
 soft microtype
 soft pdfcrop
