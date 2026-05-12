@@ -34,7 +34,7 @@ jobs:
           echo '::group::to-be-determined.log'
           cat build/doc/to-be-determined.log 2>/dev/null || echo 'no build/doc/to-be-determined.log'
           echo '::endgroup::'
-      - uses: JamesIves/github-pages-deploy-action@v4.7.3
+      - uses: JamesIves/github-pages-deploy-action@v4.8.0
         with:
           branch: gh-pages
           folder: build/distrib/tds/tex/latex
