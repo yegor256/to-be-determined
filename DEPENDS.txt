@@ -1,5 +1,6 @@
 hard soul
 hard xcolor
+hard xkeyval
 soft bookmark
 soft docshots
 soft environ
