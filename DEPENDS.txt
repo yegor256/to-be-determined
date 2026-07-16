@@ -1,8 +1,10 @@
 hard soul
 hard xcolor
+soft bookmark
 soft docshots
 soft environ
 soft etoolbox
+soft fail-fast
 soft href-ul
 soft hypdoc
 soft l3build
