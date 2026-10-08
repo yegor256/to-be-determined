@@ -16,5 +16,6 @@ soft pdfcrop
 soft pgf
 soft pgfopts
 soft scheme-basic
+soft to-be-determined
 soft tools
 soft xetex
